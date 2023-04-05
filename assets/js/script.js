@@ -18,6 +18,7 @@ let buttonsGamer = areaPlayer.querySelectorAll('button');
 let spanerro = document.querySelector('.area-player-input span');
 let fundo = document.querySelector('body');
 
+
 let acertos = 0
 let vitoria = 0
 let derrota = 0
@@ -28,7 +29,7 @@ let numeroAleatorio = ''
 let letrasInformadas =[]
 let verificarLetraOk = false
 let palavraGamer = ''
-numerofundo = 1
+let numerofundo = 1
 
 
 let listaPalavras =[
