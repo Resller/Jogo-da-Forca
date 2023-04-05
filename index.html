@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9a744b8d1b.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Jogo da Forca</title>
+</head>
+<body style="background-image: url(assets/img/fundo1.jpg);" >
+   
+    <div class="title-star"><h1>Jogo da Forca</h1></div> 
+    <div class="area-gamer" >
+      <!-- tela inicio-->
+        <div class="area-star">
+            <div class="area-img-star">
+               <img src="assets/img/forca.png" alt="">
+            </div>
+            <div class="area-button-star">
+                    <button onclick=" exibirModal1()">Cadastrar Palavras</button>
+                    <button onclick="inciarJogo()">Inicar Jogo</button>
+                    <button onclick="exibirLista()">lista de Palavras</button>
+                    <button onclick="exibirInstrucoes()">Instruções</button>
+            </div>
+        </div>
+           <!-- modal Cadastro-->
+           <div class="area-modal1"> 
+                <form>
+                     <div class="modal-titulo"> 
+                        <h2>Cadastrar Palavra</h2>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="area-input">
+                        <label> Palavra: <br> 
+                            <input type="text" id="i-1" >
+                            <div id="i-1-erro"></div>
+                        </label>
+                        <label> Dica da Palavra: <br>
+                            <input type="text" id="i-2">
+                            <div id="i-2-erro" ></div>
+                        </label>
+                        <div class="area-cadastro">
+                            <button >Cadastrar</button>
+                            <span> Palavra Cadastrada com Sucesso</span>
+                        </div>
+                     </div>
+                 </form> 
+           </div>
+            <!-- modal lista-->
+            <div class="area-lista">
+                <div class="title-lista">
+                    <h2>Listagem de Palavras</h2>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Palavras</th>
+                            <th>Dicas</th>
+                            <th><input type="checkbox" onclick="selecionar()" id="input-todos"> Todos</th>
+                        </tr> 
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <button onclick="excluirPalavra()">Excluir</button>
+            </div>
+            <!-- modal instruçoes-->
+            <div class="area-instrucao">
+                <div class="title-instrucao">
+                    <h2>Instruções:</h2>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="instrucoes">
+                    <p>O objetivo deste jogo é descobrir uma palavra adivinhando as letras que ela possui. A cada rodada, os jogadores irão simultaneamente escolher uma letra que suspeitem fazer parte da palavra. Caso a palavra contenha esta letra, será mostrado em que posição(ões) ela está. Entretanto, caso esta letra não exista na palavra, será desenhada uma parte do corpo do boneco do jogador. Se todas as 6 partes do corpo do boneco estiverem desenhadas, o jogador estará fora da partida.</p>
+                </div>
+            </div>
+            
+            <!--area do jogo-->
+            <div class="area-jogo-total">               
+                <div class="area-dica">
+                    <div class="area-marcador">
+                        <div class="derrota">
+                            <i class="fa-solid fa-xmark"></i>
+                            <span> 0 </span>
+                        </div>
+                        <div class="vitoria">                            
+                            <i class="fa-solid fa-trophy"></i>
+                            <span> 0 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="area-jogo">
+                    <div class="area-forca">
+                        <div class="jogo-forca-img">
+                            <img src="assets/img/forca.png" >
+                        </div>
+                        <div class="area-palavra">
+                           <div class="area-palavra-dica">
+                             <div class="dica">Dica: <span></span></div>
+                             <div class="numero-letras">Nº de Letras: <span></span></div>
+                           </div>
+                            <div class="palavra-erros">Letras Erradas:<span></span></div>
+                            <div class="palavra"></div>
+                        </div>  
+                    </div>
+                    <div class="area-player">
+                        <div class="player">
+                            <label>
+                                Informe uma Letra:
+                            </label>
+                            <div class="area-player-input ">
+                                <input type="text" id="player-input">
+                                <button id="player-button">Enviar</button> <br>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="area-info">
+                            <div class="numero-chances">Nº de Chances: <span>7</span> </div>
+                            <div class="numero-erros">Nº de Erros: <span>0</span></div>
+                            <div class="nova-palavra"><button>Nova Palavra</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--modal Resultado vencedor -->
+            <div class="area-vecendor">
+                <div class="area-txt">
+                    <div class="txt">
+                        <h3>Parabéns!!!</h3>
+                        <p>Você Acertou</p>
+                    </div>
+                    <div class="face">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                </div>
+                <div class="jogar-novamente"><button onclick="jogarNovamenteV()">jogar Novamente</button></div>
+            </div>
+            
+            <!--modal Resultado perdedor -->
+            <div class="area-perdedor">
+                <div class="area-txt">
+                    <div class="txt-perdedor">
+                        <h3>Você Errou</h3>
+                        <h4>A Palavra é:</h4>
+                        <h2></h2>
+                    </div>
+                    <div class="face-derota">
+                        <i class="fa-solid fa-face-dizzy"></i>
+                    </div>
+                </div>
+                <div class="jogar-novamente"><button onclick="jogarNovamenteD()">jogar Novamente</button></div>
+            </div>
+    </div>
+       
+    
+   
+            
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,832 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Libre Baskerville', serif;
+    transition: all 1s;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;  
+  background-position: center;
+  background-repeat: no-repeat;
+   background-size: cover;    
+}
+
+/* titulo */
+.title-star{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-star h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 0 3px #333;
+}
+
+/* area do jogo todo */
+.area-gamer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* parte 1  */
+
+.area-star{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+}
+.area-img-star img{
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+}
+.area-button-star{
+    display: flex;
+    flex-direction: column;
+}
+.area-button-star button{
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 13px 7px ;
+    font-size: 17px;
+    text-transform: uppercase;
+    border: none;
+    background:  linear-gradient(#1b2e0c,#1f3312,#253916,#2a3e1b);
+    cursor: pointer;
+    color: #FFF;
+    box-shadow: 0 0 10px #111;
+}
+.area-button-star button:hover{
+    background:  linear-gradient(#f0bf49,#ffdb63,#fff77e);
+    color:#1b2e0c;
+    box-shadow: 0 0 10px #1b2e0c;
+}
+
+/* modal 1 */
+.area-modal1{
+    width: 450px;
+    height: auto;
+    padding: 25px 20px;
+    border-radius: 20px;
+    flex-direction: column;
+    background-color: #f0bf49;
+    color: #111;
+    box-shadow: 0 0 10px #111;
+    display: none;
+    position: absolute;
+}
+.modal-titulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #F00;
+}
+.modal-titulo h2{
+    color: #1b2e0c;
+}
+.modal-titulo i{
+    cursor: pointer;
+}
+.area-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 17px;
+}
+.area-input label{
+    margin: 5px 0;
+    height: 85px; 
+}
+.erro{
+    background-color: #F00;
+    color: #FFF;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    transition: all 0s;
+   
+}
+.area-input input{
+    width: 100%;
+    padding:  8px 10px;
+    margin: auto;
+    border-radius: 10px; 
+    font-size: 17px;
+    outline: none;
+    border: none;
+}
+.area-input button{
+    width: 32%;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 13px 7px ;
+    font-size: 17px;
+    text-transform: uppercase;
+    border: none;
+    background:  linear-gradient(#1b2e0c,#1f3312,#253916,#2a3e1b);
+    cursor: pointer;
+    color: #FFF;
+    box-shadow: 0 0 10px #111;
+}
+.area-input button:hover{
+    background:  linear-gradient(#009833,#29a943,#35b24b);
+}
+.area-cadastro{
+    display: flex;
+    align-items: center;
+}
+.area-cadastro span{ 
+    color: #000f98;
+    margin-left: 15px;
+    display: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* modal 2 lista */
+
+.area-lista{
+    width: 650px;
+    height: 350px;
+    padding: 25px 20px;
+    border-radius: 20px;
+    background-color: #f7f7fe;
+    color: #111;
+    box-shadow: 0 0 10px #111;
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: auto;
+    position: absolute;
+}
+.title-lista{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-lista h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+.title-lista i{
+font-size: 20px;
+color: #F00;
+cursor: pointer;
+}
+.area-lista table{
+    width: 100%;
+    max-height: 95%;
+    margin-top: 12px;
+    text-align: left;
+    border-collapse: collapse;
+    color: #000;
+    font-weight: 700;
+   
+}
+th{
+    background-color:#f0bf49 ;
+    color: #000;
+    text-transform: uppercase;
+}
+th,td{  
+    padding: 7px 7px;
+}
+.area-lista tr:nth-child(odd){
+    background-color: #1f3312;
+    color: #fff;
+}
+
+.area-lista button{
+    width: 20%;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 13px 7px ;
+    font-size: 17px;
+    border: none;
+    background:  linear-gradient(#800000,#840704,#8d150c);
+    cursor: pointer;
+    color: #FFF;
+    margin-left: auto;
+}
+.area-lista button:hover{
+    background:  linear-gradient(#df0000,#f40000,#ff2e16);
+    box-shadow: 0 0 10px #f40000;
+}
+
+/* modal instrução*/
+.area-instrucao{
+    width: 450px;
+    height: auto;
+    padding: 25px 20px;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    background-color: #f0bf49;
+    color: #111;
+    box-shadow: 0 0 10px #111;
+    position: absolute;
+}
+.title-instrucao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.title-instrucao{
+    color: #1b2e0c;
+}
+.title-instrucao i {
+    font-size: 20px;
+    color: #F00;
+    cursor: pointer;
+}
+
+/* area jogo*/
+.area-jogo-total{
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+}
+.area-dica{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    font-size: 30px;
+}
+.area-marcador{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto;
+    flex: 1;
+    margin-right: 2%;
+}
+.derrota,.vitoria{
+    border: solid 1px #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 5px; 
+    box-shadow: 0 0 10px #000;
+}
+.derrota i{
+ color: #F00;
+}
+.vitoria i {
+    color: #bab8b5;
+}
+.area-jogo{
+    flex: 1;
+    display: flex;
+}
+.area-forca{
+    flex: 3;
+    display: flex;
+}
+.area-player{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.area-player .player {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.player label{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    width: 260px;  
+    text-align: center;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: #f0bf49;
+}
+.area-player-input span{
+    color: #FFF;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+   
+}
+
+.player input{
+    outline: none;
+    padding: 7px;
+    font-size: 17px;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    border: none;
+    box-shadow: 0 0 10px #000;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+.player button{
+    border-radius: 10px;
+    padding: 10px 10px ;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: none;
+    background:  linear-gradient(#1b2e0c,#1f3312,#253916,#2a3e1b);
+    cursor: pointer;
+    color: #FFF;
+    box-shadow: 0 0 10px #111;
+}
+.player button:hover{
+    background:linear-gradient(#07a6a3,#33bab6,#41c4c0);
+    box-shadow: #c9dee9 0 0 10px;
+}
+.area-info{
+    flex: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.numero-chances,.numero-erros{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    width: 260px;  
+    text-align: start;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: #f0bf49;
+}
+.numero-chances span{
+    color: #009833;
+}
+.numero-erros span{
+    color: #F00;
+}
+.nova-palavra{
+    margin-top: 10%;
+    width: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.nova-palavra button{
+    border-radius: 10px;
+    padding: 10px 15px ;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: none;
+    background:  linear-gradient(#1b2e0c,#1f3312,#253916,#2a3e1b);
+    cursor: pointer;
+    color: #FFF;
+    box-shadow: 0 0 10px #000;
+}
+.nova-palavra button:hover{
+    background:linear-gradient(#07a6a3,#33bab6,#41c4c0);
+    box-shadow: #c9dee9 0 0 10px;
+    
+}
+.jogo-forca-img{
+    width: 210px;
+    margin-left: 3%;
+}
+.jogo-forca-img img{
+    width: 210px;
+}
+.area-palavra{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    flex-direction: column;
+    height: calc(100% - 80px);
+}
+.area-palavra-dica{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+.dica,.numero-letras{
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: #f0bf49;
+    font-size: 25px;
+    margin-bottom: 5%;
+}
+.dica span,.numero-letras span{
+    color: #000f98;
+}
+.palavra-erros{
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: #f0bf49;
+    font-size: 25px;
+}
+.palavra-erros span{
+    color:#F00 ;
+    font-weight: bold;
+    font-size: 25px;
+}
+.palavra{
+    font-size: 45px;
+    margin-top: 20%;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: #f0bf49;
+    font-size: 50px;
+    color: #1b2e0c;
+}
+
+/* Modal Resultado*/
+
+.area-vecendor{
+    width: 450px;
+    height: auto;
+    padding: 10px 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#f7f7f7;
+    color: #111;
+    box-shadow: 0 0 10px #111;
+    position: absolute;
+}
+.fechar{
+    width: 100%;
+    text-align: end;
+    color: #F00;
+    font-size: 25px;
+}
+.fechar i{
+    cursor: pointer;
+}
+.txt{
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #1f3312;
+    font-weight: bold;
+    text-align: center;
+}
+.txt p {
+    margin-top: 7px ;
+}
+.face{
+    font-size: 100px;
+    color:#f0bf49;
+    text-align: center;
+    margin: 15px 0;
+}
+.jogar-novamente button{
+    border-radius: 10px;
+    padding: 10px 10px ;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: none;
+    background:  linear-gradient(#1b2e0c,#1f3312,#253916,#2a3e1b);
+    cursor: pointer;
+    color: #FFF;
+    box-shadow: 0 0 10px #000;
+
+}
+.jogar-novamente button:hover{
+    background:linear-gradient(#07a6a3,#33bab6,#41c4c0);
+    box-shadow: #c9dee9 0 0 10px;
+}
+
+/*Modal perdedor*/
+.area-perdedor{
+    width: 450px;
+    height: auto;
+    padding: 10px 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#f7f7f7;
+    color: #111;
+    box-shadow: 0 0 10px #111;
+    position: absolute;
+}
+.txt-perdedor{
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+}
+.txt-perdedor h3{
+color: #F00;
+}
+.txt-perdedor h4{
+    font-size: 20px;
+    margin: 10px 0;
+}
+.face-derota  {
+    color: #FDDB70;
+    text-align: center;
+    font-size: 80px;
+    margin: 15px 0;
+    text-shadow: 2px 2px 5px #000 ;
+}
+
+@media(max-width:1250px){
+    .dica,.numero-letras{
+        font-size:18px;
+        padding: 4px 6px;
+        margin: 0 2%;
+    }
+    .jogo-forca-img img{
+        width: 215px;
+    }
+    .palavra-erros{
+        font-size: 24px;
+        margin: 11% 0px;
+    }
+    .derrota, .vitoria{
+        padding: 6px;
+    }
+    .palavra{
+        font-size: 48px;
+    }
+    .player label,.numero-chances,.numero-erros{
+        width: auto;
+    }
+}
+
+@media(max-width:1100px) {
+    .dica,.numero-letras{
+        font-size:16px;
+        padding: 4px 5px;
+        margin: 0 2%;
+    }
+    .jogo-forca-img img{
+        width:180px;
+    }
+    .palavra-erros{
+        font-size: 20px;
+        margin: 13% 0px;
+    }
+    .derrota, .vitoria{
+        padding: 5px;
+        font-size: 20px;
+    }
+    .palavra{
+        font-size: 40px;
+    }
+    .player label,.numero-chances,.numero-erros{
+        width: auto;
+        font-size: 16px;
+        border-radius: 7px;
+    }
+    .player button {
+        font-size:16px;
+        padding: 7px;
+    }
+    .nova-palavra button{
+        font-size: 16px;
+    }
+    .area-player-input span{
+        font-size: 10px;
+        padding: 3px;
+    }
+}
+
+@media(max-width:800px){
+    .jogo-forca-img img{
+        width:170px;
+    }
+    .nova-palavra button{
+        font-size: 14px;
+    }
+    .title-star{
+        height: 70px;
+    }
+    .title-star h1{
+        font-size: 30px;
+    }
+}
+
+@media(max-width:730px){
+    .area-img-star img{
+        width: 150px;
+    }
+    .area-button-star{
+        gap: 10px;
+    }
+    .area-button-star button{
+        font-size: 10px;
+        margin: 0;
+        padding: 12px 6px;
+    }
+    .area-modal1{
+        width: 90%;
+    }
+    .modal-titulo{
+        font-size: 15px;
+    }
+    .area-input label{
+        margin: 0;
+    }
+    .area-input button{
+        width: auto;
+        font-size: 15px;
+        padding: 12px 6px;
+    }
+    .erro{
+        font-size: 10px;
+    }
+    .area-cadastro{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .area-lista{
+        width: 90%;
+    }
+    .title-lista h2{
+        font-size: 20px;
+    }
+    #input-todos{
+        font-size: 10px;
+        display: flex;
+    }
+    .area-lista table{
+        font-size: 12px;
+    }
+    .area-lista button{
+        font-size: 14px;
+        padding: 11px 6px;
+    }
+    .area-instrucao{
+        width: 90%;
+    }
+    .area-dica{
+        padding: 10px 0;
+        height: auto;
+        font-size: 25px;
+    }
+    .area-jogo{
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 40px;
+    }
+    .title-star{
+        height: 50px;
+    }
+    .title-star h1{
+        font-size: 22px;
+    }
+    .jogo-forca-img{
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .jogo-forca-img img{
+        width: 120px;
+    }
+    .dica, .numero-letras{
+        font-size: 12px;
+        padding: 6px;
+    }
+    .palavra-erros{
+        font-size: 14px;
+    }
+    .area-forca{
+        flex: none;
+       
+    }
+    .area-palavra-dica{
+        justify-content: space-between;
+    }
+    .area-palavra{
+        align-items: flex-start;
+    }
+    .palavra{
+        font-size: 25px;
+        margin-top: 18%;
+        font-size: 22px;
+    }
+    .area-player .player{
+        justify-content: flex-start;
+        flex: none;
+        gap: 15px;
+        width: 50%;
+        align-items: normal;
+        padding: 0 10px;
+    }
+    .player label, .numero-chances, .numero-erros{
+        font-size: 12px;
+    }
+    .player input{
+        padding: 5px;
+        font-size: 12px;
+        margin: 0;
+        border-radius: 7px;
+        width: 70px;
+    }
+    .player button{
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 7px;
+    }
+    .area-player-input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+    .player label{
+        margin: 0;
+    }
+    .area-player{
+        gap: 20px;
+        width: 100%;
+        flex-direction: row-reverse;
+        flex: none;
+    }
+    .area-info{
+        flex: none;
+        width: 50%;
+        align-items: center;
+    }
+    .nova-palavra{
+       margin-top: 5%;
+       width: auto;
+    }
+    .nova-palavra button{
+        font-size: 12px;
+        padding: 8px;
+        border-radius: 7px;
+    }
+    .area-player-input span{
+        font-size: 9px;
+        text-align: center;
+    }
+    .area-perdedor,.area-vecendor{
+        width: 90%;
+    }
+    .palavra-erros span{
+        font-size: 16px;
+    }
+    .derrota, .vitoria{
+        font-size: 17px;
+    }
+}
+@media(max-width:340px){
+    .player input{
+        width: 60px;
+    }
+    .jogo-forca-img img{
+        width: 110px;
+    }
+    .jogo-forca-img{
+        width: 130px;
+    }
+    .area-player-input{
+        gap: 3px;
+    }
+    .area-forca{
+        gap: 10px;
+    }
+    .palavra-erros span{
+        font-size: 14px;
+    }
+    .palavra-erros{
+        padding: 4px 6px;
+    }
+    .area-palavra{
+        padding-right: 5px;
+    }
+    .area-info{
+        width: 46%;
+    }
+}
