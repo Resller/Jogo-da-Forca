@@ -621,6 +621,9 @@ color: #F00;
 }
 
 @media(max-width:800px){
+    body{
+        overflow: visible;
+    }
     .jogo-forca-img img{
         width:170px;
     }
@@ -633,6 +636,7 @@ color: #F00;
     .title-star h1{
         font-size: 30px;
     }
+    
 }
 
 @media(max-width:730px){
